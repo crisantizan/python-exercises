@@ -120,9 +120,9 @@ def main():
         input_letter = input_text[0].lower()
 
         found = False
-        for index in range(0, len(word)):
-            if input_letter == word[index]:
-                chars[index] = input_letter
+        for index, letter in enumerate(word):
+            if input_letter == letter:
+                chars[index] = letter
                 found = True
 
         if not found:
@@ -135,7 +135,8 @@ def main():
                 continue
             except:
                 # winner
-                print("\n\u001b[32mYou're winner!")
+                print(chars)
+                print("\u001b[32mYou're winner!")
                 break
         else:
             clear()
